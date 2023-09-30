@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta lang="zh-CN">
+    <!-- 最新编译并压缩的 CSS -->
+    <link href="https://www.w3school.com.cn/lib/bs/bootstrap.css" rel="stylesheet">
+    <!-- 最新编译的 JavaScript -->
+    <script src="https://www.w3school.com.cn/lib/bs/bootstrap.js"></script>
+</head>
+<title>智慧作业系统</title>
+
+<body>
+    <nav class="navbar navbar-expand-sm navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">智慧作业系统</a>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div type="input-group large mt-3 mb-3">
+            <div class="button-group">
+                <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" id="SubjectBtn">
+                    选择科目
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" onclick="setSubject('语文')">语文</a></li>
+                    <li><a class="dropdown-item" href="#">数学</a></li>
+                    <li><a class="dropdown-item" href="#">英语</a></li>
+                    <li><a class="dropdown-item" href="#">物理</a></li>
+                    <li><a class="dropdown-item" href="#">化学</a></li>
+                    <li><a class="dropdown-item" href="#">生物</a></li>
+                </ul>
+
+            </div>
+            <div class="form-floating">
+                <textarea class="form-control" id="comment" name="text" placeholder="Comment goes here"></textarea>
+                <label for="comment">请输入作业</label>
+            </div>
+
+        </div>
+    </div>
+</body>
+<script>
+    function setSubject(subjcect) {
+        document.getElementById("SubjectBtn").textContent = subjcect;
+    }
+</script>
+</html>
