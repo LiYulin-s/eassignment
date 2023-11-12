@@ -5,47 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
     <meta lang="zh-CN">
-    <!-- 最新编译并压缩的 CSS -->
-    <link href="https://www.w3school.com.cn/lib/bs/bootstrap.css" rel="stylesheet">
-    <!-- 最新编译的 JavaScript -->
-    <script src="https://www.w3school.com.cn/lib/bs/bootstrap.js"></script>
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.2.2/dist/css/uikit.min.css" />
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.2.2/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.2.2/dist/js/uikit-icons.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.7.1.min.js"></script>
 </head>
 <title>智慧作业系统</title>
 
-<body>
-    <nav class="navbar navbar-expand-sm navbar-light bg-light">
-        <div class="container">
-            <a class="navbar-brand" href="#">智慧作业系统</a>
-        </div>
-    </nav>
-
-    <div class="container-fluid">
-        <div type="input-group large mt-3 mb-3">
-            <div class="button-group">
-                <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" id="SubjectBtn">
-                    选择科目
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" onclick="setSubject('语文')">语文</a></li>
-                    <li><a class="dropdown-item" href="#">数学</a></li>
-                    <li><a class="dropdown-item" href="#">英语</a></li>
-                    <li><a class="dropdown-item" href="#">物理</a></li>
-                    <li><a class="dropdown-item" href="#">化学</a></li>
-                    <li><a class="dropdown-item" href="#">生物</a></li>
-                </ul>
-
+<body class="uk-container">
+    
+    <form action="/api/submit" method="get">
+        <fieldset class="uk-fieldset">
+            <legend class="uk-legend">智慧作业系统</legend>
+            <div class="uk-margin">
+                <label class ="uk-form-label" name="subject">科目</label>
+                <select class="uk-select">
+                    <option value="Chinese">语文</option>
+                    <option value="Math">数学</option>
+                    <option value="English">英语</option>
+                    <option>化学</option>
+                    <option>物理</option>
+                    <option>生物</option>
+                    <option>政治</option>
+                    <option>历史</option>
+                    <option>地理</option>
+                </select>
             </div>
-            <div class="form-floating">
-                <textarea class="form-control" id="comment" name="text" placeholder="Comment goes here"></textarea>
-                <label for="comment">请输入作业</label>
+            <div class="uk-margin">
+                <label class="uk-form-label" name="period">时段</label>
+                <select class="uk-select">
+                    <option>早读</option>
+                    <option>午自习</option>
+                    <option>晚自习</option>
+                    <option>通知</option>
+                </select>
             </div>
-
-        </div>
-    </div>
+            <div class="uk-margin">
+                <label class="uk-form-label" name="content">内容</label>
+                <textarea class="uk-textarea" rows="5" placeholder="内容"></textarea>
+            </div>
+            <div  class="uk-margin">
+                <button onclick="submit">提交</button>
+            </div>
+        </fieldset>
+    </form>
 </body>
 <script>
-    function setSubject(subjcect) {
-        document.getElementById("SubjectBtn").textContent = subjcect;
+    function submit(){
+        alert()
     }
 </script>
+
 </html>

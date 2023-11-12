@@ -1,5 +1,4 @@
 from sanic import Sanic
-from sqlalchemy
 
 app = Sanic("BackEnd")
 
